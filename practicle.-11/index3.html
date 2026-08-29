@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multicolor Website</title>
+    <style>
+        body{
+                background-color: rgb(170, 157, 38);
+            }
+        @media screen and (orientation: portrait) {
+            body{
+                border: 2px solid rgb(230, 116, 10);
+            }
+        }
+        @media only screen and (max-width: 455px) {
+            body{
+                background-color: rgb(7, 9, 141);
+                color:aliceblue;
+            }
+            .boxes{
+                flex-direction: column;
+            }
+         :root{
+            --color: rgb(163, 163, 20);
+            --defop:0.4;
+            --defpad:23px;
+            --seccolor: rgb(10, 230, 28);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+       .container{
+        background-color: var(--color);
+       }
+       .boxes{
+        .box{
+            background-color: rgb(10, 230, 28);
+            width: 344px;
+            height: 344px;
+            padding: 3px;
+            margin: 3px;
+        }
+       }
+    </style>
+</head>
+<body>
+     <div class="container">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error ratione, architecto quos labore fugit ab velit
+        optio alias pariatur neque.
+    </div>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

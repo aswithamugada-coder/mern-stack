@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>velora Cosmetics | Luxury Beauty</title>
+  <meta name="description" content="A premium cosmetics store homepage with elegant product showcases and responsive design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    :root {
+      --primary: #c76b8a;
+      --secondary: #8c6fb2;
+      --accent: #f7c8d9;
+      --bg: #fffafc;
+      --surface: #ffffff;
+      --text: #3f3147;
+      --muted: #7a6e7d;
+      --border: #f0e6ee;
+      --shadow: 0 20px 45px rgba(199, 107, 138, 0.14);
+      --radius: 24px;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, #fff9fc 0%, #fdf4f8 100%);
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page-shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Header */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 999px;
+      box-shadow: 0 12px 35px rgba(140, 111, 178, 0.12);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 20px;
+      z-index: 20;
+    }
+
+    .logo {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 4px;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      min-width: 220px;
+    }
+
+    .search-box input {
+      border: 0;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+    }
+
+    .search-box button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .icon-btn {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .icon-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(199, 107, 138, 0.16);
+    }
+
+    .nav-toggle,
+    .nav-toggle-label {
+      display: none;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      margin-top: 30px;
+      padding: 38px;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(247, 200, 217, 0.42), rgba(255, 255, 255, 0.96));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+      opacity: 0.45;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .hero::before {
+      width: 180px;
+      height: 180px;
+      background: rgba(199, 107, 138, 0.18);
+      top: -30px;
+      right: -30px;
+    }
+
+    .hero::after {
+      width: 140px;
+      height: 140px;
+      background: rgba(140, 111, 178, 0.14);
+      bottom: -20px;
+      left: -20px;
+      animation-delay: 1.2s;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 10px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--primary);
+      font-size: 0.83rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0 0 24px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(199, 107, 138, 0.16);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary);
+      border: 1px solid rgba(199, 107, 138, 0.18);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(199, 107, 138, 0.3);
+      background: transparent;
+      color: var(--primary);
+    }
+
+    .btn-luxury {
+      background: linear-gradient(135deg, #ffcfde, #e0c5ff);
+      color: #6e3953;
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-metrics span {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 24px 48px rgba(123, 83, 128, 0.18);
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+    }
+
+    /* Sections */
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.45rem;
+      margin: 0;
+    }
+
+    .section-heading p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .section-link {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .category-card,
+    .product-card,
+    .testimonial-card,
+    .blog-card,
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 36px rgba(124, 96, 128, 0.08);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .category-card:hover,
+    .product-card:hover,
+    .testimonial-card:hover,
+    .blog-card:hover,
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 26px 46px rgba(199, 107, 138, 0.16);
+    }
+
+    .category-card {
+      overflow: hidden;
+      padding-bottom: 18px;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 190px;
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .category-card h3 {
+      margin: 16px 18px 6px;
+      font-size: 1.1rem;
+    }
+
+    .category-card p {
+      margin: 0 18px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    /* Products */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      padding: 16px;
+      position: relative;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(199, 107, 138, 0.95);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .product-card .wishlist {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .product-image {
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 190px;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-brand {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .rating {
+      color: #f4b400;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .old-price {
+      color: var(--muted);
+      text-decoration: line-through;
+      font-size: 0.9rem;
+    }
+
+    .product-card .btn {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+    }
+
+    /* Featured collection */
+    .feature-collection {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      background: linear-gradient(135deg, #fff, #fff6fb);
+      border-radius: 36px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .feature-collection img {
+      border-radius: 28px;
+      min-height: 360px;
+      width: 100%;
+    }
+
+    .feature-content {
+      padding: 10px 0;
+    }
+
+    .feature-content h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      margin: 0 0 12px;
+    }
+
+    .feature-content p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    /* Why choose us */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 14px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(199, 107, 138, 0.14), rgba(140, 111, 178, 0.16));
+      color: var(--primary);
+      font-size: 1.35rem;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      padding: 22px;
+    }
+
+    .testimonial-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-head img {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+    }
+
+    .testimonial-head h4 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .testimonial-head span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .testimonial-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* Blog */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .blog-card {
+      overflow: hidden;
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 220px;
+      transition: transform 0.5s ease;
+    }
+
+    .blog-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .blog-content {
+      padding: 18px;
+    }
+
+    .blog-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .blog-content p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      margin-top: 34px;
+      padding: 32px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fdd9e8, #fef8fb 70%, #e7dfff);
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .newsletter h3 {
+      font-family: 'Lora', serif;
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .newsletter p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .newsletter form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .newsletter input {
+      min-width: 260px;
+      padding: 13px 16px;
+      border: 1px solid rgba(199, 107, 138, 0.2);
+      border-radius: 999px;
+      outline: none;
+      font: inherit;
+    }
+
+    /* Brands */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .brand-pill {
+      padding: 16px 12px;
+      text-align: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.84rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      border-radius: 24px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 12px 30px rgba(128, 100, 137, 0.1);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 38px rgba(128, 100, 137, 0.18);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 34px;
+      padding: 30px;
+      border-radius: 32px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, minmax(0,1fr));
+      gap: 20px;
+      box-shadow: 0 10px 30px rgba(122, 110, 125, 0.08);
+    }
+
+    .footer h4 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer .brand-copy {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .socials a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #fff6fb;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .copyright {
+      grid-column: 1 / -1;
+      padding-top: 14px;
+      margin-top: 8px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .footer {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        border-radius: 24px;
+        padding: 16px 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle-label {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+
+      .nav-toggle-label span,
+      .nav-toggle-label span::before,
+      .nav-toggle-label span::after {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+
+      .nav-toggle-label span::before,
+      .nav-toggle-label span::after {
+        content: '';
+      }
+
+      .nav-toggle-label span::before {
+        transform: translateY(-6px);
+      }
+
+      .nav-toggle-label span::after {
+        transform: translateY(4px);
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        order: 4;
+        padding-top: 10px;
+      }
+
+      .nav-toggle:checked + .nav-toggle-label + .nav-links {
+        display: flex;
+      }
+
+      .header-actions {
+        margin-left: auto;
+      }
+
+      .hero,
+      .feature-collection {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid,
+      .feature-grid,
+      .testimonial-grid,
+      .blog-grid,
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .brand-grid {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-shell {
+        padding: 14px;
+      }
+
+      .topbar {
+        align-items: center;
+      }
+
+      .search-box {
+        display: none;
+      }
+
+      .hero,
+      .feature-collection,
+      .newsletter,
+      .footer {
+        padding: 20px;
+      }
+
+      .product-grid,
+      .category-grid,
+      .feature-grid,
+      .testimonial-grid,
+      .blog-grid,
+      .gallery-grid,
+      .brand-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .newsletter form {
+        flex-direction: column;
+      }
+
+      .newsletter input {
+        min-width: 100%;
+      }
+
+      .footer {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="logo" href="#"><span>V</span>Velora</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Open navigation menu"><span></span></label>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#categories">Categories</a>
+        <a href="#products">Best Sellers</a>
+        <a href="#collection">Collection</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-box" role="search">
+          <input type="search" placeholder="Search products" aria-label="Search products" />
+          <button type="submit" aria-label="Search">⌕</button>
+        </form>
+        <a class="icon-btn" href="#" aria-label="Wishlist">♡</a>
+        <a class="icon-btn" href="#" aria-label="Cart">🛍</a>
+        <a class="icon-btn" href="#" aria-label="Profile">👤</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">Luxury beauty ritual</span>
+          <h1>Elevate your glow with velvet-soft essentials.</h1>
+          <p>Discover radiant formulas crafted with botanical elegance, rich pigments, and a finish that feels as luxurious as it looks.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#products">Shop Now</a>
+            <a class="btn btn-secondary" href="#collection">Learn More</a>
+          </div>
+          <div class="hero-metrics">
+            <span>✓ Organic ingredients</span>
+            <span>✓ Cruelty free</span>
+            <span>✓ Fast shipping</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Luxury skincare and cosmetics display" />
+          </div>
+        </div>
+      </section>
+
+      <section id="categories" class="section">
+        <div class="section-heading">
+          <div>
+            <h2>Featured Categories</h2>
+            <p>Curated collections designed to bring out your best features.</p>
+          </div>
+          <a class="section-link" href="#">View all</a>
+        </div>
+        <div class="category-grid">
+          <article class="category-card">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=80" alt="Makeup essentials" />
+            <h3>Makeup</h3>
+            <p>Velvety pigments and sculpting finishes for every mood.</p>
+          </article>
+          <article class="category-card">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80" alt="Skincare products" />
+            <h3>Skincare</h3>
+            <p>Hydrating formulas with barrier-loving ingredients.</p>
+          </article>
+          <article class="category-card">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=80" alt="Hair care styling" />
+            <h3>Hair Care</h3>
+            <p>Glossy treatments to soften, strengthen, and style.</p>
+          </article>
+          <article class="category-card">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80" alt="Fragrance collection" />
+            <h3>Fragrances</h3>
+            <p>Elegant scents with soft florals and warm amber.</p>
+          </article>
+          <article class="category-card">
+            <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=80" alt="Lip products" />
+            <h3>Lip Care</h3>
+            <p>Plush balms and satin lip colors with high comfort.</p>
+          </article>
+          <article class="category-card">
+            <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=700&q=80" alt="Beauty tools" />
+            <h3>Beauty Tools</h3>
+            <p>Precision tools for a salon-like application at home.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="products" class="section">
+        <div class="section-heading">
+          <div>
+            <h2>Best Selling Products</h2>
+            <p>Signature favorites loved for comfort, performance, and glow.</p>
+          </div>
+          <a class="section-link" href="#">See more</a>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <span class="product-badge">New</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Velora velvet foundation" />
+            </div>
+            <div class="product-brand">Velora</div>
+            <h3 class="product-title">Velvet Skin Foundation</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$48</span>
+              <span class="old-price">$64</span>
+            </div>
+            <a class="btn btn-luxury" href="#">Add to Cart</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">-20%</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=80" alt="Rose lip tint" />
+            </div>
+            <div class="product-brand">Lumière</div>
+            <h3 class="product-title">Rose Kiss Lip Tint</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$26</span>
+              <span class="old-price">$32</span>
+            </div>
+            <a class="btn btn-outline" href="#">Add to Cart</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Best Seller</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?auto=format&fit=crop&w=700&q=80" alt="Glow serum" />
+            </div>
+            <div class="product-brand">Niora</div>
+            <h3 class="product-title">Dewdrop Glow Serum</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$39</span>
+              <span class="old-price">$49</span>
+            </div>
+            <a class="btn btn-primary" href="#">Add to Cart</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Limited</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=80" alt="Luxury perfume bottle" />
+            </div>
+            <div class="product-brand">Éclat</div>
+            <h3 class="product-title">Velvet Bloom Eau de Parfum</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$84</span>
+              <span class="old-price">$104</span>
+            </div>
+            <a class="btn btn-secondary" href="#">Add to Cart</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Top Rated</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=700&q=80" alt="Makeup brush set" />
+            </div>
+            <div class="product-brand">Studio Luxe</div>
+            <h3 class="product-title">Silk Brush Set</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$34</span>
+              <span class="old-price">$44</span>
+            </div>
+            <a class="btn btn-outline" href="#">Add to Cart</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Fresh</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80" alt="Moisturizing cream" />
+            </div>
+            <div class="product-brand">Bela</div>
+            <h3 class="product-title">Cloud Cream</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$32</span>
+              <span class="old-price">$40</span>
+            </div>
+            <a class="btn btn-primary" href="#">Add to Cart</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Editor’s pick</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=80" alt="Nourishing lip balm" />
+            </div>
+            <div class="product-brand">Velora</div>
+            <h3 class="product-title">Velvet Lip Balm</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$18</span>
+              <span class="old-price">$24</span>
+            </div>
+            <a class="btn btn-secondary" href="#">Add to Cart</a>
+          </article>
+
+          <article class="product-card">
+            <span class="product-badge">Glow</span>
+            <a class="wishlist" href="#" aria-label="Add to wishlist">♡</a>
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80" alt="Brightening face mask" />
+            </div>
+            <div class="product-brand">Mira</div>
+            <h3 class="product-title">Luminous Mask</h3>
+            <div class="rating">★★★★★</div>
+            <div class="price-row">
+              <span class="price">$29</span>
+              <span class="old-price">$36</span>
+            </div>
+            <a class="btn btn-luxury" href="#">Add to Cart</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="collection" class="feature-collection">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Luxury beauty collection" />
+        <div class="feature-content">
+          <span class="eyebrow">Limited edition</span>
+          <h3>The Rosé Ritual Collection</h3>
+          <p>Indulge in a luminous edit of blush tones, petal-soft glosses, and nourishing skin treats curated for the modern beauty lover.</p>
+          <a class="btn btn-primary" href="#">Explore Collection</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <h2>Why Choose Us</h2>
+            <p>Beauty that feels thoughtful, safe, and beautifully made.</p>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🌿</div>
+            <h3>Organic Ingredients</h3>
+            <p>Thoughtfully sourced botanicals that nurture your skin.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🧪</div>
+            <h3>Dermatologist Tested</h3>
+            <p>Every formula is designed to be gentle and effective.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">💖</div>
+            <h3>Cruelty Free</h3>
+            <p>Beauty without compromise, never tested on animals.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Shipping</h3>
+            <p>Quick dispatch so your favorites reach you promptly.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure Payment</h3>
+            <p>Protected checkout for a seamless shopping experience.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Premium Quality</h3>
+            <p>Luxury textures, rich pigments, and refined finishes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <h2>Customer Testimonials</h2>
+            <p>Real glow-ups from our cherished community.</p>
+          </div>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-head">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Customer portrait" />
+              <div>
+                <h4>Maya R.</h4>
+                <span>Beauty enthusiast</span>
+              </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p>“The velvet foundation feels like silk and lasts all day. I’m obsessed with the glow.”</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-head">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Customer portrait" />
+              <div>
+                <h4>Nina S.</h4>
+                <span>Skincare lover</span>
+              </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p>“The glow serum transformed my skin texture in just a week. The packaging is stunning too.”</p>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-head">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Customer portrait" />
+              <div>
+                <h4>Amira T.</h4>
+                <span>Luxury shopper</span>
+              </div>
+            </div>
+            <div class="rating">★★★★★</div>
+            <p>“Elegant, effective, and beautifully packaged—this brand feels truly premium.”</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="blog" class="section">
+        <div class="section-heading">
+          <div>
+            <h2>Beauty Blog</h2>
+            <p>Fresh inspiration from the world of beauty and self-care.</p>
+          </div>
+          <a class="section-link" href="#">Read all</a>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Beauty routine tips" />
+            <div class="blog-content">
+              <h3>How to Build a Soft Glam Routine</h3>
+              <p>Blend complexion, sculpt softly, and finish with a creamy glow for everyday elegance.</p>
+              <a class="btn btn-outline" href="#">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80" alt="Hair styling inspiration" />
+            <div class="blog-content">
+              <h3>Glossy Hair, Effortless Finish</h3>
+              <p>Discover the perfect heatless styling habits for sleek, polished hair.</p>
+              <a class="btn btn-outline" href="#">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80" alt="Skincare evening routine" />
+            <div class="blog-content">
+              <h3>Night Rituals for Radiant Skin</h3>
+              <p>Layer calming skincare essentials to wake up with renewed softness and bounce.</p>
+              <a class="btn btn-outline" href="#">Read More</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div>
+          <h3>Join the Velora Glow List</h3>
+          <p>Receive exclusive offers, first access to launches, and beauty tips delivered to your inbox.</p>
+        </div>
+        <form>
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" type="email" placeholder="Your email address" />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <h2>Brand Partners</h2>
+            <p>Trusted favorites in modern beauty.</p>
+          </div>
+        </div>
+        <div class="brand-grid">
+          <div class="brand-pill">Luna Beauty</div>
+          <div class="brand-pill">Niora</div>
+          <div class="brand-pill">Aurelia</div>
+          <div class="brand-pill">Éclat</div>
+          <div class="brand-pill">Lumière</div>
+          <div class="brand-pill">Bela</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <h2>Instagram Gallery</h2>
+            <p>Moments of glow, texture, and color inspiration.</p>
+          </div>
+        </div>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Beauty flat lay" />
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80" alt="Beauty routine close-up" />
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=80" alt="Perfume display" />
+          <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=80" alt="Lip color products" />
+          <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80" alt="Skincare cream" />
+          <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=700&q=80" alt="Beauty tools and brush set" />
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="footer">
+      <div>
+        <a class="logo" href="#"><span>V</span>Velora</a>
+        <p class="brand-copy">Premium beauty essentials crafted to bring softness, confidence, and glow into every ritual.</p>
+        <div class="socials" aria-label="Social media links">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Pinterest">📌</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Shop</li>
+          <li>Categories</li>
+          <li>Offers</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Customer Service</h4>
+        <ul>
+          <li>FAQ</li>
+          <li>Returns</li>
+          <li>Shipping</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <ul>
+          <li>Weekly drops</li>
+          <li>Member rewards</li>
+          <li>Beauty tips</li>
+        </ul>
+      </div>
+      <div class="copyright">© 2026 Velora Cosmetics. All rights reserved.</div>
+    </footer>
+  </div>
+</body>
+</html>

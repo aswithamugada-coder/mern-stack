@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Query</title>
+    <style>
+        body{
+                background-color: rgb(170, 157, 38);
+            }
+        @media screen and (orientation: portrait) {
+            body{
+                border: 2px solid rgb(230, 116, 10);
+            }
+        }
+        @media only screen and (max-width: 455px) {
+            body{
+                background-color: rgb(7, 9, 141);
+                color:aliceblue;
+            }
+            .boxes{
+                flex-direction: column;
+            }
+            
+        }
+        .box{
+            background-color: rgb(10, 230, 28);
+            width: 344px;
+            height: 344px;
+            padding: 3px;
+            margin: 3px;
+        }
+        .boxes{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        hey i am chubby women!
+    </div>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

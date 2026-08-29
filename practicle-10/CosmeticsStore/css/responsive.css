@@ -1,0 +1,116 @@
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-grid,
+  .form-grid,
+  .shop-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-layout {
+    display: block;
+  }
+
+  .sidebar {
+    margin-bottom: 1.2rem;
+  }
+
+  .category-grid,
+  .review-grid,
+  .blog-grid,
+  .team-grid,
+  .stat-grid,
+  .partner-grid,
+  .faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .offer-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: min(100% - 1.2rem, var(--container));
+  }
+
+  .section {
+    padding: 3.7rem 0;
+  }
+
+  .category-grid,
+  .product-grid,
+  .review-grid,
+  .blog-grid,
+  .team-grid,
+  .stat-grid,
+  .partner-grid,
+  .faq-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .page-hero .container {
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .icon-pill {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-card {
+    padding: 1rem;
+  }
+}

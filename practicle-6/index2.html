@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        /* element selector */
+        h1 {
+            color: blue;
+        }
+
+        /* id selector */
+        #green {
+            background-color: rgb(189, 50, 182);
+        }
+
+        /* class selector */
+        .bg-yellow {
+            color: rgb(7, 168, 21);
+        }
+
+        /*child selector */
+        / div>h3 {
+            color: blue;
+        }
+
+        div>p {
+            color: rgb(255, 196, 0);
+        }
+
+        /* descendent selector */
+        div h3 {
+            color: blue;
+        }
+
+        /*universal selector*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a:visited {
+            color: brown;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:active {
+            color: blue;
+        }
+
+        a:hover {
+            background-color: chartreuse;
+        }
+
+        #orange {
+            color: rgb(0, 47, 255);
+        }
+
+        .xyz h1 {
+            background-color: blueviolet;
+        }
+
+        .xyz h1 {
+            color: beige;
+        }
+
+        div.zyx p {
+            color: rgb(175, 13, 13);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Selectors</h1>
+    <div>
+        <p>This is a paragraph.</p>
+    </div>
+    <div id="green">
+        <p>This is another pargraph.</p>
+    </div>
+    <div class="bg-yellow">
+        <article>
+            <h3>This is a heading</h3>
+        </article>
+        <p>this is third paragraph</p>
+    </div>
+    <a href="https://www.google.com" target="_blank">open google</a>
+    <br>
+    <a href="https://www.facebook.com">open facebook</a>
+    <p id="orange">this is a para</p>
+    <div class="abc">
+        <div class="abcd xyz">
+            <h1>this is heading</h2>
+                <p>this is paragraph</p>
+        </div>
+        <div class="abcde zyx">
+            <div class="abcd xyz">
+                <h2>this is another heading</h2>
+                <p>this is another paragraph</p>
+            </div>
+</body>
+
+</html>

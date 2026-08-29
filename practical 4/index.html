@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form page</title>
+</head>
+
+<body>
+    <h1>this is a form page</h1>
+    <form action="post">
+        <div>
+            <label for="username">username: </label>
+            <input id="username" type="text" name="username" placeholder="Enter your username"><br>
+        </div>
+        <div>
+            <label for="male">male: </label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="female">female: </label>
+            <input type="radio" id="female" name="gender" value="female">
+        </div>
+        <div>
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">subscribe to newsletter:</label>
+        </div>
+        <div>
+            <input type="checkbox" id="following" name="following" value="yes">
+            <label for="following">following to newsletter:</label>
+        </div>
+        <div>
+            <textarea id="message" name="message" rows="7" cols="16"
+                placeholder="Enter your message">tauheed html sir</textarea>
+        </div>
+        <div>
+            <label for="country">country:</label>
+            <select id="country" name="country">
+                <option>select a country</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="brazil">BRAZIL</option>
+            </select>
+        </div>
+        <input type="submit" value="submit">
+
+    </form>
+</body>
+
+</html>
