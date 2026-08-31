@@ -1,0 +1,6 @@
+@import "tailwindcss";
+.dj{
+  background-color: burlywood;
+  height: 200px;
+  width: 200px;
+}
