@@ -1,0 +1,11 @@
+.header{
+    background-color: rgb(90, 133, 224);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 5px;
+}
+.btn{
+    background-color: blanchedalmond;
+}
